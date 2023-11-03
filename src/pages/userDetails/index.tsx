@@ -32,6 +32,8 @@ export const UserDetailsPage = () => {
     navigate("/");
   };
 
+  const dateOfBirth = new Date(user?.dateOfBirth || "").toLocaleDateString();
+
   return (
     <div>
       <Paper className="details__container">
@@ -73,7 +75,7 @@ export const UserDetailsPage = () => {
 
         <div className="item__container">
           <label className="title">Fecha de nacimiento: </label>
-          <label className="value">{user?.dateOfBirth}</label>
+          <label className="value">{dateOfBirth}</label>
         </div>
 
         <div className="item__container">
@@ -82,7 +84,7 @@ export const UserDetailsPage = () => {
         </div>
       </Paper>
 
-      <Button variant="outlined" onClick={goBack} style={{ marginTop: 20 }}>
+      <Button variant="contained" onClick={goBack} style={{ marginTop: 20 }}>
         Volver atras
       </Button>
     </div>
