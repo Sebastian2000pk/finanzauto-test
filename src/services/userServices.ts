@@ -63,23 +63,23 @@ class UserServices {
     }
   }
 
-  async getById(id: string): Promise<UserDetails> {
+  async getById(id: string): Promise<UserDetails | null> {
     try {
       const response: any = await fetchApi.get("/user/" + id);
       return response;
     } catch (err) {
       console.log("Error:", err);
-      return {};
+      return null;
     }
   }
 
-  async update(id: string, user: UserDetails): Promise<UserDetails> {
+  async update(id: string, user: UserDetails): Promise<UserDetails | null> {
     try {
       const response: any = await fetchApi.put("/user/" + id, user);
       return response;
     } catch (err) {
       console.log("Error:", err);
-      return false;
+      return null;
     }
   }
 }

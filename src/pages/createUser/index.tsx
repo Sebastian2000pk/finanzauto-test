@@ -94,7 +94,7 @@ export const CreateUserPage = () => {
       formik.setFieldValue("phone", response.phone);
       formik.setFieldValue(
         "dateOfBirth",
-        new Date(response.dateOfBirth).toISOString().split("T")[0]
+        new Date(response?.dateOfBirth).toISOString().split("T")[0]
       );
 
       setMode("edit");
@@ -102,6 +102,8 @@ export const CreateUserPage = () => {
   };
 
   const updateUser = async (data: UserDetails) => {
+    if (!userId) return;
+    
     const response = await userServices.update(userId, data);
     if (!response) return;
 

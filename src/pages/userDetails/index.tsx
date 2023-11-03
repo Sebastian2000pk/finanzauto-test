@@ -19,7 +19,8 @@ export const UserDetailsPage = () => {
     if (!userId) return;
 
     const response = await userServices.getById(userId);
-    console.log(response)
+    if (!response) return;
+    
     setUser(response);
   }
 
