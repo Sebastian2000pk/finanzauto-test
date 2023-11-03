@@ -1,0 +1,11 @@
+#root {
+  padding: 2rem;
+  text-align: center;
+}
+
+.container__app {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}

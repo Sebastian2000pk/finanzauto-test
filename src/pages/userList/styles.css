@@ -1,0 +1,20 @@
+.user-list__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 6rem;
+}
+
+.actions__container {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
