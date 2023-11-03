@@ -17,6 +17,10 @@ import InputLabel from "@mui/material/InputLabel";
 import Button from "@mui/material/Button";
 import { userServices } from "../../services/userServices";
 
+// fecha actual menos 2 dias
+const maxDate = new Date();
+maxDate.setDate(maxDate.getDate() - 2);
+
 export const CreateUserPage = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -231,13 +235,16 @@ export const CreateUserPage = () => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={formik.touched.dateOfBirth && Boolean(formik.errors.dateOfBirth)}
+        inputProps={{
+          max: maxDate.toISOString().split("T")[0],
+        }}
       />
 
       <TextField
         id="phone-input"
         label="Telefono"
         variant="outlined"
-        type="phone-number"
+        type="number"
         name="phone"
         value={formik.values.phone}
         onChange={formik.handleChange}

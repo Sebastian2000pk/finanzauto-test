@@ -25,7 +25,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import IconButton from "@mui/material/IconButton";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 
 export const UserListPage = () => {
   const [page, setPage] = useState<number>(0);
@@ -150,6 +150,7 @@ export const UserListPage = () => {
           <TableFooter>
             <TableRow>
               <TablePagination
+                rowsPerPageOptions={[PAGE_SIZE]}
                 colSpan={3}
                 count={totalRows}
                 rowsPerPage={PAGE_SIZE}
