@@ -1,0 +1,28 @@
+.details__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.picture {
+  width: 100px;
+  height: 100px;
+}
+
+.item__container {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.value {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
