@@ -20,6 +20,10 @@ import TablePagination from "@mui/material/TablePagination";
 import TableHead from "@mui/material/TableHead";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import IconButton from "@mui/material/IconButton";
 
 const PAGE_SIZE = 10;
 
@@ -101,7 +105,7 @@ export const UserListPage = () => {
               <TableCell>ID</TableCell>
               <TableCell align="center">Nombre</TableCell>
               <TableCell align="center">Foto</TableCell>
-              <TableCell align="right">Acciones</TableCell>
+              <TableCell align="center">Acciones</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -117,15 +121,27 @@ export const UserListPage = () => {
                 </TableCell>
                 <TableCell style={{ width: 150 }}>
                   <div className="actions__container">
-                    <button onClick={() => onClickDeleteUser(user.id)}>
-                      eliminar
-                    </button>
-                    <button onClick={() => handleClickEditUser(user.id)}>
-                      editar
-                    </button>
-                    <button onClick={() => handleClickViewUserDetails(user.id)}>
-                      ver detalle
-                    </button>
+                    <IconButton
+                      onClick={() => onClickDeleteUser(user.id)}
+                      className="button__action"
+                      color="error"
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+
+                    <IconButton
+                      onClick={() => handleClickEditUser(user.id)}
+                      className="button__action"
+                    >
+                      <EditIcon />
+                    </IconButton>
+
+                    <IconButton
+                      onClick={() => handleClickViewUserDetails(user.id)}
+                      className="button__action"
+                    >
+                      <VisibilityIcon />
+                    </IconButton>
                   </div>
                 </TableCell>
               </TableRow>
